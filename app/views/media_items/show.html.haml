@@ -18,6 +18,8 @@
 %span= @media_item.created_at.to_s(:my_datetime)
 %br
 
+= social_share_button_tag(@media_item.name, :popup => "true")
+
 - if @media_item.user == current_user
   = link_to 'Edit', edit_media_item_path(@media_item)
 = link_to 'Back', media_items_path

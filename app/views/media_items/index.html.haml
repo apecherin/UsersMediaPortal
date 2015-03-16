@@ -3,6 +3,7 @@
 %table
   %thead
     %tr
+      %th Share
       %th Name
       %th Image/URL
       %th Owner
@@ -10,6 +11,7 @@
   %tbody
     - @media_items.each do |media_item|
       %tr
+        %td.big-td= social_share_button_tag(media_item.name, :popup => "true")
         %td.big-td= media_item.name
         %td.big-td
           - unless media_item.image.blank?

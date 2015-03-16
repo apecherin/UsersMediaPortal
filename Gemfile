@@ -17,7 +17,7 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
     :github => 'anjlab/bootstrap-rails',
     :branch => '3.0.0'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
-
+gem 'social-share-button'
 
 group :development, :test do
   gem 'byebug'
