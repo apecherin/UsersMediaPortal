@@ -12,8 +12,9 @@
       .navbar-header
         = link_to "Listing Media Files", root_path, :class=>"navbar-brand"
       %ul.nav.navbar-nav.navbar-right
-        #button_sign
+        #buttons-devise
           - if user_signed_in?
+            = link_to 'My Profile', edit_user_registration_path, :class=>"btn btn-li btn-success"
             = link_to 'Sign out', destroy_user_session_path, :method => :delete, :class=>"btn btn-li btn-danger"
           - else
             = link_to 'Sign in', new_user_session_path, :class=>"btn btn-li btn-success"
