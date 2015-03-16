@@ -11,6 +11,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
+gem 'haml-rails'
+gem 'devise', github: 'plataformatec/devise'
 
 
 group :development, :test do
