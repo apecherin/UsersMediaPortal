@@ -8,6 +8,12 @@ GIT
       sass (>= 3.2)
 
 GIT
+  remote: git://github.com/bmabey/database_cleaner.git
+  revision: bb608dd3ac6b149cbe92a658d3f8abbebfe82f3f
+  specs:
+    database_cleaner (1.4.1)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 9aa72db3656e6b0e84683f7dc8dad639415c78c0
   specs:
@@ -91,8 +97,14 @@ GEM
     columnize (0.9.0)
     connection_pool (2.1.2)
     debug_inspector (0.0.2)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.4.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     haml (4.0.6)
@@ -175,6 +187,22 @@ GEM
       json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rspec-core (3.0.4)
+      rspec-support (~> 3.0.0)
+    rspec-expectations (3.0.4)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-mocks (3.0.4)
+      rspec-support (~> 3.0.0)
+    rspec-rails (3.0.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.4)
     ruby_parser (3.6.5)
       sexp_processor (~> 4.1)
     sass (3.4.13)
@@ -227,13 +255,16 @@ DEPENDENCIES
   bson_ext
   byebug
   coffee-rails (~> 4.1.0)
+  database_cleaner!
   devise!
+  factory_girl_rails
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
   mongoid!
   mongoid-paperclip
   rails (= 4.2.0)
+  rspec-rails (~> 3.0.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   social-share-button
