@@ -13,7 +13,9 @@ gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'haml-rails'
 gem 'devise', github: 'plataformatec/devise'
-
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+    :github => 'anjlab/bootstrap-rails',
+    :branch => '3.0.0'
 
 group :development, :test do
   gem 'byebug'
