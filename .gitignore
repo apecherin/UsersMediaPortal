@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 /.idea
-/public/system/media_items*
+/public/system/media_items/*
