@@ -9,6 +9,8 @@
     = javascript_include_tag "application"
   %body
     %header.navbar.navbar-default.navbar-fixed-top{role: "banner"}
+      .navbar-header
+        = link_to "Listing Media Files", root_path, :class=>"navbar-brand"
       %ul.nav.navbar-nav.navbar-right
         #button_sign
           - if user_signed_in?

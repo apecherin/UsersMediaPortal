@@ -1,0 +1,23 @@
+= form_for @media_item do |f|
+  - if @media_item.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@media_item.errors.count, "error")} prohibited this media item from being saved:"
+      %ul
+        - @media_item.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  %br
+  .field
+    = f.label :image
+    = image_tag(@media_item.image.url(:medium)) unless @media_item.image.blank?
+    = f.file_field :image
+  %br
+  .field
+    = f.label :url
+    = f.text_field :url
+  %br
+  .actions
+    = f.submit 'Save', :class => "btn btn-primary"

@@ -1,0 +1,23 @@
+%p#notice= notice
+
+%b= @media_item.name
+%br
+
+- unless @media_item.image.blank?
+  %img{:alt => @media_item.name, :src => @media_item.image.url(:medium)}/
+  %br
+
+- unless @media_item.url.blank?
+  %b= @media_item.url unless @media_item.url.blank?
+  %br
+
+%label Owner
+%span= @media_item.user.username
+%br
+
+%span= @media_item.created_at.to_s(:my_datetime)
+%br
+
+- if @media_item.user == current_user
+  = link_to 'Edit', edit_media_item_path(@media_item)
+= link_to 'Back', media_items_path

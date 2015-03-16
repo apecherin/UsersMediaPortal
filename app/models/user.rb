@@ -9,7 +9,8 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :username_validations, presence: true
+  validates :username, presence: true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   field :email, type: String, default: ""
   field :username, type: String, default: ""
@@ -31,16 +32,5 @@ class User
   field :current_sign_in_ip,  type: String
   field :last_sign_in_ip,     type: String
 
-  def username_validations
-    errors.add(:username, 'can\'t be empty') if username.blank?
-    errors.add(:username, 'can\'t contain less than 3 symbols') if username.size < 3
-    username = self.username.split
-    errors.add(:username, 'can\'t contain more than 2 words') if username.size > 2
-    if username.size == 2
-      errors.add(:username, '1 part can\'t contain more than 12 symbols') if username[0].size > 12
-      errors.add(:username, '2 part can\'t contain more than 12 symbols') if username[1].size > 12
-    elsif username.size == 1
-      errors.add(:username, 'can\'t contain more than 12 symbols') if username[0].size > 12
-    end
-  end
+  has_many :media_item
 end

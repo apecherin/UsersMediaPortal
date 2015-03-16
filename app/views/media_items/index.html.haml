@@ -1,0 +1,31 @@
+%h1 Listing Media Files
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Image/URL
+      %th Owner
+      %th.small-th Actions
+  %tbody
+    - @media_items.each do |media_item|
+      %tr
+        %td.big-td= media_item.name
+        %td.big-td
+          - unless media_item.image.blank?
+            %img{:alt => media_item.name, :src => media_item.image.url(:small)}/
+            %br
+          - unless media_item.url.blank?
+            %b= media_item.url unless media_item.url.blank?
+        %td.big-td= media_item.user.username
+        %td
+          = link_to 'Show', media_item
+          - if media_item.user == current_user
+            \|
+            = link_to 'Edit', edit_media_item_path(media_item)
+            \|
+            = link_to 'Destroy', media_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Media Item', new_media_item_path
