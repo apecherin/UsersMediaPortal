@@ -32,5 +32,5 @@ class User
   field :current_sign_in_ip,  type: String
   field :last_sign_in_ip,     type: String
 
-  has_many :media_item
+  has_many :media_item, dependent: :destroy
 end

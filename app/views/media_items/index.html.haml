@@ -18,7 +18,7 @@
             %img{:alt => media_item.name, :src => media_item.image.url(:small)}/
             %br
           - unless media_item.url.blank?
-            %b= media_item.url unless media_item.url.blank?
+            = link_to media_item.url, media_item.url unless media_item.url.blank?
         %td.big-td= media_item.user.username
         %td
           = link_to 'Show', media_item
