@@ -1,6 +1,7 @@
 class MediaItemsController < ApplicationController
   before_filter :authenticate_user!, except: :index
   before_action :set_media_item, only: [:show, :edit, :update, :destroy]
+  before_action :check_onwer, only: [:edit, :update, :destroy]
 
   def index
     @media_items = MediaItem.all
@@ -57,5 +58,9 @@ class MediaItemsController < ApplicationController
 
   def media_item_params
     params.require(:media_item).permit(:name, :url, :image)
+  end
+
+  def check_onwer
+    redirect_to root_path if @media_item.user != current_user
   end
 end
